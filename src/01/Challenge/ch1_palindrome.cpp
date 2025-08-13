@@ -6,17 +6,28 @@
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 // is_palindrome()
 // Summary: This function receives a string and returns true if the string is a palindrome, false otherwise.
 // Arguments:
 //           str: The string to analyze.
 // Returns: A boolean value. True for palindromes, false otherwise.
-bool is_palindrome(std::string str){
+bool is_palindrome(const std::string& str){
 
     // Write your code here
-
-    return false;
+    const char* left = str.c_str();
+    const char* right = str.c_str() + str.size() ;
+    while (left <= right)
+    {
+        if(*left != *right)
+            return false;
+      
+        ++left;
+        --right;
+    }
+    
+    return true;
 }
 
 // Main function
