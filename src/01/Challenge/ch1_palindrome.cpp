@@ -17,12 +17,19 @@ bool is_palindrome(const std::string& str){
 
     // Write your code here
     const char* left = str.c_str();
-    const char* right = str.c_str() + str.size() ;
+    const char* right = str.c_str() + str.size() - 1;
+    
     while (left <= right)
     {
-        if(*left != *right)
+        if(std::isalpha(*left) && std::isalpha(*right)) {
+            if(std::tolower(*left) != std::tolower(*right))
+                return false;
+        }
+        else {
+            std::cout << "Text contain no alfanumeric character" << std::endl;
             return false;
-      
+        }
+        
         ++left;
         --right;
     }

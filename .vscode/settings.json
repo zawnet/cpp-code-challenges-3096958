@@ -74,6 +74,13 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "cstring": "cpp"
+    "cstring": "cpp",
+    "charconv": "cpp",
+    "format": "cpp",
+    "iomanip": "cpp",
+    "numbers": "cpp",
+    "span": "cpp",
+    "text_encoding": "cpp",
+    "variant": "cpp"
   }
 }
