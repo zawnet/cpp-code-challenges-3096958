@@ -8,31 +8,10 @@
 
 #include <iostream>
 
-// sort_array()
-// Summary: This function receives an array of integers and sorts it in ascending order.
-// Arguments:
-//           arr: A pointer acting as the array to sort.
-//           n: The size of the array.
-// Returns: A boolean value: True on success, false otherwise.
-bool sort_array(int *arr, int n){
-
-    // Write your code here
-    int pivot_index = n/2;
-    int pivot = arr[pivot_index];
-    std::cout << pivot << std::endl;
-
-    for (size_t i = 0; i < count; i++)
-    {
-        /* code */
-    }
-    
-
-    return false;
-}
 // Function which merge array and retrun pointer to pivot element
 int* partition(int* left_idx, int* right_idx){
-    int pivot = *right_idx/2;
-    int* i = left_idx -1;
+    int pivot = *right_idx / 2;
+    int* i = left_idx - 1;
     for(int* j = left_idx; j < right_idx; ++j) {
         if(*j < pivot) {
             ++i;
@@ -45,9 +24,27 @@ int* partition(int* left_idx, int* right_idx){
 
 }
 
-void quick_sort(int *arr, int left_idx, int right_idx) {
-    
+void quick_sort(int* left_idx, int* right_idx) {
+    if(left_idx < right_idx) {
+        int* pi = partition(left_idx, right_idx);
+        quick_sort(left_idx, pi - 1);
+        quick_sort(pi + 1, right_idx);
+    }
 }
+// sort_array()
+// Summary: This function receives an array of integers and sorts it in ascending order.
+// Arguments:
+//           arr: A pointer acting as the array to sort.
+//           n: The size of the array.
+// Returns: A boolean value: True on success, false otherwise.
+bool sort_array(int *arr, int n){
+
+    quick_sort(arr, arr + n - 1);
+    
+
+    return false;
+}
+
 
 // Main function
 int main(){
