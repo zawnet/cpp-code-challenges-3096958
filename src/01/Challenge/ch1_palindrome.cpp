@@ -37,6 +37,18 @@ bool is_palindrome(const std::string& str){
     return true;
 }
 
+// is_palindrome()
+// Summary: This function receives a string and returns true if the string is a palindrome, false otherwise.
+// Arguments:
+//           str: The string to analyze.
+// Returns: A boolean value. True for palindromes, false otherwise.
+bool is_palindrome2(std::string str){
+    std::transform(str.begin(), str.end(), str.begin(), tolower);
+    std::string rev = str;
+    std::reverse(rev.begin(), rev.end());  // rev is the reverse of str
+    return str == rev;
+}
+
 // Main function
 int main(){
     std::string s;
